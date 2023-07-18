@@ -1,0 +1,238 @@
+<html>
+<head>
+<style>
+body {
+  margin: 0;
+}
+
+header {
+  background-color: #dabbbb;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer {
+  background-color: #e2bcbc;
+  padding: 10px;
+  text-align: center;
+}
+
+h1 {
+  font-weight: bolder;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  flex-grow: 1;
+  text-align: center;
+  margin: 0;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.square-box {
+  width: 200px;
+  height: 150px;
+  background-color: #302f2f3f;
+  border: 1px solid #ddd;
+  margin: 10px;
+  text-align: center;
+  padding-top: 60px;
+  position: relative;
+}
+
+.square-box:hover {
+  background-color: #e2e2e2;
+  cursor: pointer;
+}
+
+.square-box a {
+  color: white;
+  text-decoration: none;
+}
+
+.square-box button {
+  background-color: #555;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.square-box button:hover {
+  background-color: #555;
+}
+
+.heading {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 20px 0;
+}
+
+.refresh-button {
+  margin-left: 20px;
+}
+
+.refresh-button button {
+  background-color: #555;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.refresh-button button:hover {
+  background-color: #555;
+}
+
+.search-box {
+  margin-right: auto;
+  margin-left: 20px;
+}
+
+.search-box input[type="text"] {
+  padding: 8px 12px;
+  font-size: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 200px;
+}
+
+</style>
+</head>
+<body>
+<header>
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search...">
+  </div>
+  <h1>Network Lab</h1>
+  <div class="refresh-button">
+    <button onclick="refreshPage()">Refresh</button>
+  </div>
+</header>
+
+
+
+<h2 class="heading">Experiments</h2>
+<div class="row">
+  
+  <div class="square-box">
+    <p>Exp-1</p>
+    <button><a href="Exp-1.sh">Open</a></button>
+  </div>
+  <div class="square-box">
+    <p>Exp-2</p>
+    <button><a href="Exp-2.sh">Open</a></button>
+  </div>
+  <div class="square-box">
+    <p>Exp-3</p>
+    <button><a href="Exp-3.sh">Open</a></button>
+  </div>
+
+  <div class="square-box">
+    <p>Exp-4</p>
+    <button><a href="Exp-4.sh">Open</a></button>
+  </div>
+  <div class="square-box">
+    <p>Exp-5</p>
+    <button><a href="Exp-5.sh">Open</a></button>
+  </div>
+</div>
+<div class="row">
+  <div class="square-box">
+    <p>Exp-6</p>
+    <button><a href="Exp-6.sh">Open</a></button>
+  </div>
+  <div class="square-box">
+    <p>Exp-7</p>
+    <button><a href="Exp-7.sh">Open</a></button>
+  </div>
+  <div class="square-box">
+    <p>Exp-8</p>
+    <button><a href="Exp-8.sh">Open</a></button>
+  </div>
+
+  <div class="square-box">
+    <p>Exp-9</p>
+    <button><a href="Exp-9.sh">Open</a></button>
+  </div>
+  <div class="square-box">
+    <p>Exp-10</p>
+    <button><a href="basic_math.sh">Open</a></button>
+  </div>
+</div>
+<div class="row">
+  <div class="square-box">
+    <p>Exp-11</p>
+    <button><a href="mark_grade.png">Open</a></button>
+  </div>
+</div>
+
+<h2 class="heading">Lab Cycles</h2>
+<div class="row">
+  <div class="square-box">
+    <p>Lab Cycle 1</p>
+    <button><a href="Lab Cycle 1.pdf">Open</a></button>
+  </div>
+  <div class="square-box">
+    <p>Lab Cycle 2</p>
+    <button><a href="Lab Cycle 2.pdf">Open</a></button>
+  </div>
+  <div class="square-box">
+    <p>Lab Cycle 3</p>
+    <button><a href="Lab Cycle 3.pdf">Open</a></button>
+  </div>
+  <div class="square-box">
+    <p>Lab Cycle 4</p>
+    <button><a href="Lab Cycle 4.pdf">Open</a></button>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 20 MCA136 Networking & System Administration Lab</p>
+</footer>
+
+<script>
+function refreshPage() {
+  location.reload();
+}
+
+function search() {
+  var input, filter, boxes, i, txtValue;
+  input = document.getElementById("searchInput");
+  filter = input.value.toUpperCase();
+  boxes = document.getElementsByClassName("square-box");
+  
+  for (i = 0; i < boxes.length; i++) {
+    txtValue = boxes[i].textContent || boxes[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      boxes[i].style.display = "";
+    } else {
+      boxes[i].style.display = "none";
+    }
+  }
+}
+
+document.getElementById("searchInput").addEventListener("keyup", search);
+</script>
+</body>
+</html>
